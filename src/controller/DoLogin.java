@@ -1,5 +1,5 @@
 package controller;
-
+//Control + Shift + O 눌르면 import 생성됨
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,30 +33,26 @@ public class DoLogin extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String customerId = request.getParameter("customerId");
-		
-		// perform business logic , Return a bean as a result.
-		CustomerService service = new CustomerService();
-		Customer customer = service.findCustomer(customerId);
-		request.setAttribute("customer", customer);
-		
-		//We can iterate over lists using forEach in JSTL
-		List<Customer> customers = new ArrayList<>();
-		customers.add(new Customer("id006", "Kim", "kim@hansung.ac.kr"));
-		customers.add(new Customer("id007", "Lee", "lee@hansung.ac.kr"));
-		customers.add(new Customer("id008", "Park", "park@hansung.ac.kr"));
-		request.setAttribute("customerList", customers);
+		//받아야 되니까 get
+		String id = request.getParameter("id");
+		String password = request.getParameter("password");
 		
 		
+		Customer customer = CustomerService.instance.login(id,password);
+
+
 		String page;
-		
+
 		if(customer == null)
-			page = "/view/error.jsp";
+			page = "/view/loginfail.jsp";
 		else
 			page = "/view/success.jsp";
 		
+		
+		request.setAttribute("customer", customer);
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(page);
+		
 		dispatcher.forward(request, response);
 		
 		
