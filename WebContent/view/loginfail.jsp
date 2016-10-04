@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>Login Fail...</title>
 </head>
 <body>
-This is a help page.
+If you want to try again. press button.
+<form action="/helloMVC/index.jsp" method="get">
+<input type="submit">
 </body>
 </html>

@@ -12,13 +12,13 @@ div.ex {
 	width: 35%;
 	padding: 10px;
 	border: 5px solid grey;
-	margin: 320px
+	margin: 20px
 	}
 </style>
 <body>
-	<h1>Login Form</h1>
+	<h1>RegistrationForm</h1>
 	<div class="ex">
-	<form action="/helloMVC/doLogin" method="get">
+	<form action="/helloMVC/doRegister" method="get">
 		<table cellpadding="5">
 		<tr>
 		<td>아이디</td>
@@ -29,11 +29,27 @@ div.ex {
 		<td><input type="password" name="password" /></td>
 		</tr>
 		<tr>
+		<td>이름</td>
+		<td><input type="text" name="name" /></td>
+		</tr>
+		<tr>
+			<td>성별</td>
+		<td><input type="radio" name="gender" value="man">남자
+		<input type="radio" name="gender" value="woman">여자
+ 		</td>
+		</tr>
+		<tr>
+		<td>이메일</td>
+		<td><input type="text" name="email" /></td>
+		</tr>
+		<tr>
 		<td></td>
-		<td><input type="submit" value="login"/></td>
+		<td><input type="submit" value="register"/></td>
 		</tr>
 		</table>
 	</form>	
 </div>
+
+
 </body>
 </html>

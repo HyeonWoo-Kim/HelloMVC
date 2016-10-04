@@ -8,6 +8,6 @@
 </head>
 <body>
 This is an error page.
-<p> <a href="/helloMVC/index.jsp"> try again </a> </p>
+<p> <a href="/helloMVC/index.jsp"> 다시 시도해보세요 </a> </p>
 </body>
 </html>
